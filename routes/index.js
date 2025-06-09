@@ -1,5 +1,10 @@
 const router = require("express").Router();
 const authRouter = require("./auth.routes");
+const bus_driver_routes = require("./bus-dirver.routes");
+const buses_routes = require("./buses.routes");
+const district_routes = require("./district.routes");
+const driver_routes = require("./driver.routes");
+const region_routes = require("./region.routes");
 const roleRouter = require("./role.routes");
 const userRoleRouter = require("./user-role.routes");
 const usersRouter = require("./user.routes");
@@ -8,5 +13,9 @@ router.use("/auth", authRouter);
 router.use("/role", roleRouter);
 router.use("/user-role", userRoleRouter);
 router.use("/users", usersRouter);
-
+router.use("/driver", driver_routes);
+router.use("/buses", buses_routes);
+router.use("/bus-driver", bus_driver_routes);
+router.use("/region", region_routes);
+router.use("/district", district_routes);
 module.exports = router;
